@@ -104,6 +104,16 @@ variable "network_rules" {
   default = {}
 }
 
+variable "index_path" {
+  description = "path from your repo root to index.html"
+  default     = "index.html"
+}
+
+variable "custom_404_path" {
+  description = "path from your repo root to your custom 404 page"
+  default     = "404.html"
+}
+
 variable "tags" {
   type        = map(string)
   description = "Defines the default tags.  Some tags like owner are enforced by Azure policies. "

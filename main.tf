@@ -10,6 +10,11 @@ resource "azurerm_storage_account" "main" {
   enable_https_traffic_only       = var.enable_https_traffic_only
   min_tls_version                 = var.min_tls_version
   tags                            = var.tags
+
+  static_website {
+    index_document     = var.index_path
+    error_404_document = var.custom_404_path
+  }
 }
 
 resource "azurerm_storage_container" "main" {
